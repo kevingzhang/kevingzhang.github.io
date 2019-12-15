@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "First time blogging after 5 6 years!"
+title:  "First time blogging after 6 years!"
 date:   2019-12-15 20:13:03 -0800
 categories: blog life
 ---
