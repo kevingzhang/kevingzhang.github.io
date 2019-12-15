@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "First time blogging after 6 years!"
+date:   2019-12-15 12:13:03 -0800
+categories: blog life
+---
+Writing in github.io doesn't guarantee I own my data. Especially GitHub is owned by Microsoft again. In order to go fully decentralized the IPFS sounds to be a good solution. However, IPFS is just a storage layer. To make a full tech stack to run majority popular applications in the decentralized world, we need to look for beyond the storage solution. We need to find decentralized computing and decentralized database too.
+
+I did research like that for more than a year. I am going to write down the solution I got in my blog, likely under the tech sector.
