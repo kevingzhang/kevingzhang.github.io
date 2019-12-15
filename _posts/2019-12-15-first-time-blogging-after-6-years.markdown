@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "First time blogging after 6 years!"
-date:   2019-12-15 20:13:03 -0800
+date:   2019-12-15 10:13:03 -0800
 categories: blog life
 ---
 I have not written any blog since 2013. Yes, I did write blogs, a long time ago. It was in the year 2005 when my daughter Emma was born. That was also the year my family and I immigrated to Canada. I wrote blogs almost every day about my everyday life as a new immigrant from an eastern country. There are too many things to be written to remember since not everyone has the chance to have the 2nd life - first 35 years living in the eastern world and the rest N (N =?)years in the western world. There were so many fun things that happened every day including cultural gap, stupid mistakes in English, etc. Believe it or not, my blog was so popular at that moment. I used to reaches M views as so many Chinese people start to open eyes to the western world, they were eager to know how a Chinese guy can live in a western country and eventually become a "foreigner".  
