@@ -30,25 +30,5 @@ Data at rest: When data is sleeping in someone&#39;s hard drive. Data in transit
       <description>I have not written any blog since 2013. Yes, I did write blogs, a long time ago. It was in the year 2005 when my daughter Emma was born. That was also the year my family and I immigrated to Canada. I wrote blogs almost every day about my everyday life as a new immigrant from an eastern country. There are too many things to be written to remember since not everyone has the chance to have the 2nd life - first 35 years living in the eastern world and the rest N (N =?</description>
     </item>
     
-    <item>
-      <title>sample</title>
-      <link>https://kevingzhang.github.io/post/test/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://kevingzhang.github.io/post/test/</guid>
-      <description>Hugo is the world&#39;s fastest static website engine. It&#39;s written in Go (aka Golang) and developed by bep, spf13 and friends.
- Below you will find some of the most common and helpful pages from our documentation.
- https://gohugo.io/documentation/</description>
-    </item>
-    
-    <item>
-      <title>test post</title>
-      <link>https://kevingzhang.github.io/post/test/</link>
-      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://kevingzhang.github.io/post/test/</guid>
-      <description>echo &amp;#34;hello world !!&amp;#34; </description>
-    </item>
-    
   </channel>
 </rss>
