@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Bear with me as English is not my programming language</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Dec 2019 20:58:49 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Dec 2019 22:12:49 -0800</lastBuildDate>
     
 	<atom:link href="https://kevingzhang.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Secure your data at rest, in transmit, and more difficult, in use</title>
+      <link>https://kevingzhang.github.io/posts/secure-data/</link>
+      <pubDate>Sun, 15 Dec 2019 22:12:49 -0800</pubDate>
+      
+      <guid>https://kevingzhang.github.io/posts/secure-data/</guid>
+      <description>When we talking about secure our data, we actually mean three different stages of a data&#39;s life.
+Data at rest: When data is sleeping in someone&#39;s hard drive. Data in transit: Data is transferred between two trusted domains. eg. from a database server to compute node, or from your browser to a server. Data in use: Data is calculated inside a machine (RAM and CPU) Data in transit problem has been resolved by cryptography, such as https have been widely used.</description>
+    </item>
     
     <item>
       <title>First time blogging after six years</title>

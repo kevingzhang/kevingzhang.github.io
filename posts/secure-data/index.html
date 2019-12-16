@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Secure your data at rest, in transmit, and more difficult, in use // Bear with me as English is not my programming language</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.61.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Kevin Zhang" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://kevingzhang.github.io/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Secure your data at rest, in transmit, and more difficult, in use"/>
+<meta name="twitter:description" content="When we talking about secure our data, we actually mean three different stages of a data&#39;s life.
+Data at rest: When data is sleeping in someone&#39;s hard drive. Data in transit: Data is transferred between two trusted domains. eg. from a database server to compute node, or from your browser to a server. Data in use: Data is calculated inside a machine (RAM and CPU) Data in transit problem has been resolved by cryptography, such as https have been widely used."/>
+
+    <meta property="og:title" content="Secure your data at rest, in transmit, and more difficult, in use" />
+<meta property="og:description" content="When we talking about secure our data, we actually mean three different stages of a data&#39;s life.
+Data at rest: When data is sleeping in someone&#39;s hard drive. Data in transit: Data is transferred between two trusted domains. eg. from a database server to compute node, or from your browser to a server. Data in use: Data is calculated inside a machine (RAM and CPU) Data in transit problem has been resolved by cryptography, such as https have been widely used." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kevingzhang.github.io/posts/secure-data/" />
+<meta property="article:published_time" content="2019-12-15T22:12:49-08:00" />
+<meta property="article:modified_time" content="2019-12-15T22:12:49-08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://kevingzhang.github.io"><img class="app-header-avatar" src="https://avatars3.githubusercontent.com/u/1761809?s=400&amp;v=4" alt="Kevin Zhang" /></a>
+      <h1>Bear with me as English is not my programming language</h1>
+      <p>description</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/vaga" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Secure your data at rest, in transmit, and more difficult, in use</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Dec 15, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <p>When we talking about secure our data, we actually mean three different stages of a data's life.</p>
+<p>Data at rest: When data is sleeping in someone's hard drive.
+Data in transit: Data is transferred between two trusted domains. eg. from a database server to compute node, or from your browser to a server.
+Data in use: Data is calculated inside a machine (RAM and CPU)
+Data in transit problem has been resolved by cryptography, such as https have been widely used. Now a day it is kind of hard to find any public web server without https. If there is, the Chrome browser will jump in between you and the unsafe server and give you a thrill warning.</p>
+<p>Data at rest can be resolved by cryptography as well. Not only for those blob data but also for structural data: Data in the database can be kept encrypted while being indexed. That means you can even query against encrypted data! Magic eh? Just google CryptDB by Raluca Ada Popa and others <a href="https://css.csail.mit.edu/cryptdb/">link</a>.</p>
+<p>Data in use is the hardest one. It is hard because the data need to be computed in CPU it has to be decrypted. I know FHE but it would be too slow to be practical if you are doing some real computation. We can do a query against encrypted data in a database because the query index is relatively easy, we can always find some kind of cryptography algorithm to deal with limited types of query/indexing. But for general-purpose computing, it would be a totally different story.</p>
+<p>How about we step back to review our original question: Why do we need to secure our data? Basically, we do not trust the environment of the storage, transportation and computing environment of our data. Our data is so important to us, and because it can be copied unlimited times as long as disclosed to malicious use.</p>
+<p>The basis of data security is that as long as data leave our fully secured domain it has to be encrypted because technically encrypted data is just garbage without the
+key. So we can do either encryption or enclose our data inside the so-called trusted domain - the walled garden.</p>
+<p>Although technically there is no absolute secure domain, generally speaking, we consider something secure as long as we own or we trust even we do not own. Instead of encrypting everything, we can also consider extending the trust to somewhere we do not own, for example, the computing node somewhere in the cloud who is processing my data!</p>
+<p>Oh, no, I know this would be your first response when heard I want you to trust an unknown machine sit in the middle of nowhere. What if the node is just pretent to be a Amazon node, what if the node is owned by Amazon but get hacked, what if some super power coming from government force the owner of the node to disclose my data&hellip;. well, there are too many &ldquo;what-if-s&rdquo; since we do not trust anything we do not own. Consider this way, even if you own it, can you trust it? Probably not. I know many people have some kind of &ldquo;smart&rdquo; home devices at home. Do you know it has the ability to listen to your talking 24 by 7 without your permission? Do you know the small cheap IoT devices usually cannot protect itself efficiently? Not to mention some superpower may generate AI and pretend to be silly when the human approach&hellip; Well, I am not going to scare you. I always pull out the power cord of my google home and I am pretty sure it doesn't have a battery in it.</p>
+
+    </div>
+    <div class="post-footer">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "kevingzhang" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
