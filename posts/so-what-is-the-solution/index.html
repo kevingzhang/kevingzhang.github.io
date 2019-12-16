@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Kevin Zhang" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.61.0" />
+
+<link rel="canonical" href="https://kevingzhang.github.io/posts/so-what-is-the-solution/">
+<meta property="og:title" content="Existing Centralized Trust Solution" />
+<meta property="og:description" content="Although we generally do not trust a machine in the middle of nowhere, in most cases we still use them, every day, every minute, every second. Cloud computing is one example. Nowadays most of the computing is happening in the data center of cloud computing providers, such as Amazon, Google, Microsoft, and others. We trust them because they are big names, and we trust them because we know they spend tons of resources to keep our data secure." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kevingzhang.github.io/posts/so-what-is-the-solution/" />
+<meta property="article:published_time" content="2019-12-16T13:37:29-08:00" />
+<meta property="article:modified_time" content="2019-12-16T13:37:29-08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Existing Centralized Trust Solution"/>
+<meta name="twitter:description" content="Although we generally do not trust a machine in the middle of nowhere, in most cases we still use them, every day, every minute, every second. Cloud computing is one example. Nowadays most of the computing is happening in the data center of cloud computing providers, such as Amazon, Google, Microsoft, and others. We trust them because they are big names, and we trust them because we know they spend tons of resources to keep our data secure."/>
+
+
+<meta itemprop="name" content="Existing Centralized Trust Solution">
+<meta itemprop="description" content="Although we generally do not trust a machine in the middle of nowhere, in most cases we still use them, every day, every minute, every second. Cloud computing is one example. Nowadays most of the computing is happening in the data center of cloud computing providers, such as Amazon, Google, Microsoft, and others. We trust them because they are big names, and we trust them because we know they spend tons of resources to keep our data secure.">
+<meta itemprop="datePublished" content="2019-12-16T13:37:29-08:00" />
+<meta itemprop="dateModified" content="2019-12-16T13:37:29-08:00" />
+<meta itemprop="wordCount" content="587">
+
+
+
+<meta itemprop="keywords" content="trusted computing,tech,blockchain," />
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Existing Centralized Trust Solution 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://kevingzhang.github.io">Kevin Zhang - the Sweeper Monk</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="code ">
+"Bear with me as English is not my programming language"
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Existing Centralized Trust Solution </h1>
+    <div class="content"> <p>Although we generally do not trust a machine in the middle of nowhere, in most cases we still use them, every day, every minute, every second. Cloud computing is one example. Nowadays most of the computing is happening in the data center of cloud computing providers, such as Amazon, Google, Microsoft, and others. We trust them because they are big names, and we trust them because we know they spend tons of resources to keep our data secure. Well, that was our expectation, but the reality could be different. Finding data leakage and cyber-attack news is not hard. Not to mention possible superpower (eg. government) influence.  No matter how we design the protection system, as long as there is an existing well-known center to be attacking target, there would be a huge chance to get broken.</p>
+<p>How about we distribute the data and processing power from the center to countless smaller compute nodes, then connect them using a p2p network. There would be no single point of failure and a single point of bait for attackers.</p>
+<p>This sounds attractive but lays a few problems need to be resolved.</p>
+<p>To defeat attackers, we need to think like an economist. We need to follow two principles:
+the attacker's cost higher than the benefit.<br>
+the defender's cost lower than the attacker's cost.
+If the confidential information is the source of profit from the attacker's point of view, protect information is much harder than protect any physical matter. Unlike gold or oil or any real matter, information can be copied and each copy has the same value as the original copy. This is the same reason why DRM (Digital Right Management) never worked well. If we distribute by store multiple copies of information to many nodes, we just expend the attacking surface, that getting worse.</p>
+<p>Distributing information to many smaller nodes also makes protection harder or more expensive. Big tech giants can afford expensive facilities and highly skilled professionals to protect their main data center, but smaller distributed node owners may not able to afford it.</p>
+<p>What's the solution then?</p>
+<p>Before I bring up my solution, please follow my logic first. There are a few things we can do in combination:
+As we discussed in a previous post, we can use cryptography to protect data at rest and data in transit. Then we could only focus on the hardest case: data in use. Therefore, the cost of defense is significantly reduced.<br>
+If there are millions of nodes in the p2p network, at any given time, only very few nodes are doing valuable computation which worth for hackers to attack. However, the zero-knowledge algorithm can keep anyone from knowing who they are. If hackers just random attack every node, the chance will be too low to cover hacker's cost.
+We keep the diversity of the tech stack and topology of our p2p network. Each node is independent of other nodes, there is no such a single-center node to control others. Each node is running a technical stack from the combinations of several hardware/software technologies. If a couple of technologies are comprised will not cause more then 1/3 of total nodes to fail at any given time.
+Economic incentivize is playing an important role in the p2p network so that all nodes are willing to contribute their computing power and well maintained to make money. Bad behaviors are easy to get noticed and punished.</p>
+<p>These are the principles of designing the decentralized trusted computing network which we will discuss in my further posts.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/trusted-computing">#trusted computing</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/tech">#tech</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/blockchain">#blockchain</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 16 Dec 2019 </div>
+  </div>
+
+</footer>
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:kevin.zhang.canada@gmail.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/kevingzhang" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/pushbar" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/kevin.zhang.canada@gmail.com" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://kevingzhang.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+
