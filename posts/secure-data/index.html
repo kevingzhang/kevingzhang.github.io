@@ -1,66 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <title>Secure your data at rest, in transmit, and more difficult, in use // Kevin Zhang - the Sweeper Monk</title>
+
+<head>
     <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.61.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Sweeper Monk" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="https://kevingzhang.github.io/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  	<meta property="og:title" content=" Secure your data at rest, in transmit, and more difficult, in use &middot;  Kevin Zhang - the Sweeper Monk" />
+  	<meta property="og:site_name" content="Kevin Zhang - the Sweeper Monk" />
+  	<meta property="og:url" content="https://kevingzhang.github.io/posts/secure-data/" />
+    
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2019-12-15T22:12:49-08:00" />
 
     
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Secure your data at rest, in transmit, and more difficult, in use"/>
-<meta name="twitter:description" content="When we talking about secure our data, we actually mean three different stages of a data&#39;s life.
-Data at rest: When data is sleeping in someone&#39;s hard drive. Data in transit: Data is transferred between two trusted domains. eg. from a database server to compute node, or from your browser to a server. Data in use: Data is calculated inside a machine (RAM and CPU) Data in transit problem has been resolved by cryptography, such as https have been widely used."/>
+    
 
-    <meta property="og:title" content="Secure your data at rest, in transmit, and more difficult, in use" />
-<meta property="og:description" content="When we talking about secure our data, we actually mean three different stages of a data&#39;s life.
-Data at rest: When data is sleeping in someone&#39;s hard drive. Data in transit: Data is transferred between two trusted domains. eg. from a database server to compute node, or from your browser to a server. Data in use: Data is calculated inside a machine (RAM and CPU) Data in transit problem has been resolved by cryptography, such as https have been widely used." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://kevingzhang.github.io/posts/secure-data/" />
-<meta property="article:published_time" content="2019-12-15T22:12:49-08:00" />
-<meta property="article:modified_time" content="2019-12-15T22:12:49-08:00" />
+  <title>
+     Secure your data at rest, in transmit, and more difficult, in use &middot;  Kevin Zhang - the Sweeper Monk
+  </title>
+
+    <meta name="description" content="Bear with me as English is not my programming language" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://kevingzhang.github.ioimages/favicon.ico">
+	  <link rel="apple-touch-icon" href="https://kevingzhang.github.ioimages/apple-touch-icon.png" />
+    
+    <link rel="stylesheet" type="text/css" href="https://kevingzhang.github.iocss/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
 
 
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://kevingzhang.github.io"><img class="app-header-avatar" src="https://avatars3.githubusercontent.com/u/1761809?s=400&amp;v=4" alt="Sweeper Monk" /></a>
-      <h1>Kevin Zhang - the Sweeper Monk</h1>
-      <p>Bear with me as English is not my programming language</p>
-      <div class="app-header-social">
-        
-          <a target="_blank" href="https://github.com/vaga" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
-  <title>github</title>
-  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-</svg></a>
-        
-      </div>
-    </header>
-    <main class="app-container">
+    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">Secure your data at rest, in transmit, and more difficult, in use</h1>
-      <div class="post-meta">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Dec 15, 2019
+          <link href="https://kevingzhang.github.ioindex.xml" rel="alternate" type="application/rss+xml" title="Kevin Zhang - the Sweeper Monk" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.61.0" />
+
+    <link rel="canonical" href="https://kevingzhang.github.io/posts/secure-data/" />
+
+     
+</head>
+<body class="nav-closed">
+<div id="particles-js"></div>
+  
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header " style="background-image: url(https://kevingzhang.github.ioimages/user.jpg)">
+
+    <nav class="main-nav overlay clearfix">
+        
+            <a class="blog-logo" href="https://kevingzhang.github.io"><img src="https://kevingzhang.github.ioimages/sweeper-monk.jpg" alt="Blog Logo" /></a>
+        
+        
+    </nav>
+<div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">
+              <a class="btn-bootstrap-2" href="#content">Kevin Zhang - the Sweeper Monk</a>
+          </h1>
+          <h2 class="page-description">Bear with me as English is not my programming language</h2>
         </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          3 min read
-        </div></div>
+</div>
+    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+</header>
+
+  <main id="content" class="content" role="main">
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Secure your data at rest, in transmit, and more difficult, in use</h1>
+        <section class="post-meta">
+        
+         
+        </section>
     </header>
-    <div class="post-content">
+
+    <section class="post-content">
       <p>When we talking about secure our data, we actually mean three different stages of a data's life.</p>
 <p>Data at rest: When data is sleeping in someone's hard drive.
 Data in transit: Data is transferred between two trusted domains. eg. from a database server to compute node, or from your browser to a server.
@@ -74,31 +100,77 @@ key. So we can do either encryption or enclose our data inside the so-called tru
 <p>Although technically there is no absolute secure domain, generally speaking, we consider something secure as long as we own or we trust even we do not own. Instead of encrypting everything, we can also consider extending the trust to somewhere we do not own, for example, the computing node somewhere in the cloud who is processing my data!</p>
 <p>Oh, no, I know this would be your first response when heard I want you to trust an unknown machine sit in the middle of nowhere. What if the node is just pretent to be a Amazon node, what if the node is owned by Amazon but get hacked, what if some super power coming from government force the owner of the node to disclose my data&hellip;. well, there are too many &ldquo;what-if-s&rdquo; since we do not trust anything we do not own. Consider this way, even if you own it, can you trust it? Probably not. I know many people have some kind of &ldquo;smart&rdquo; home devices at home. Do you know it has the ability to listen to your talking 24 by 7 without your permission? Do you know the small cheap IoT devices usually cannot protect itself efficiently? Not to mention some superpower may generate AI and pretend to be silly when the human approach&hellip; Well, I am not going to scare you. I always pull out the power cord of my google home and I am pretty sure it doesn't have a battery in it.</p>
 
-    </div>
-    <div class="post-footer">
-      <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "kevingzhang" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
-  </article>
+    </section>
 
-    </main>
-  </body>
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+
+        <a class="img" href="https://kevingzhang.github.io" style="background-image: url(https://kevingzhang.github.ioimages/sweeper-monk.jpg)"><span class="hidden">Sweeper Monk</span></a>
+    </figure>
+    
+
+    <section class="author">
+
+  <p>Sweeper Monk</p>
+  
+
+</section>
+
+
+    
+    <section class="share">
+      <h4>Share this posts</h4>
+      <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Secure%20your%20data%20at%20rest%2c%20in%20transmit%2c%20and%20more%20difficult%2c%20in%20use&amp;url=https%3a%2f%2fkevingzhang.github.io%2fposts%2fsecure-data%2f"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <span class="hidden">Twitter</span>
+      </a>
+      <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkevingzhang.github.io%2fposts%2fsecure-data%2f"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <span class="hidden">Facebook</span>
+      </a>
+      <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fkevingzhang.github.io%2fposts%2fsecure-data%2f"
+         onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <span class="hidden">Google+</span>
+      </a>
+    </section>
+    
+
+    
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'kevingzhang';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+
+  </footer>
+</article>
+
+</main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Kevin Zhang - the Sweeper Monk</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="https://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/syui/hugo-theme-air">hugo-theme-air</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://kevingzhang.github.iojs/jquery.js"></script>
+    <script type="text/javascript" src="https://kevingzhang.github.iojs/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://kevingzhang.github.iojs/index.js"></script>
+    <script src="https://kevingzhang.github.iojs/particles.min.js"></script>
+    <script src="https://kevingzhang.github.iojs/particles.js"></script>  
+
+</body>
 </html>
+
