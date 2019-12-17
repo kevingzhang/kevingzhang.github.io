@@ -21,15 +21,6 @@
     </item>
     
     <item>
-      <title>Existing Centralized Trust Solution</title>
-      <link>https://kevingzhang.github.io/posts/so-what-is-the-solution/</link>
-      <pubDate>Mon, 16 Dec 2019 13:37:29 -0800</pubDate>
-      
-      <guid>https://kevingzhang.github.io/posts/so-what-is-the-solution/</guid>
-      <description>Although we generally do not trust a machine in the middle of nowhere, in most cases we still use them, every day, every minute, every second. Cloud computing is one example. Nowadays most of the computing is happening in the data center of cloud computing providers, such as Amazon, Google, Microsoft, and others. We trust them because they are big names, and we trust them because we know they spend tons of resources to keep our data secure.</description>
-    </item>
-    
-    <item>
       <title>Secure your data at rest, in transmit, and more difficult, in use</title>
       <link>https://kevingzhang.github.io/posts/secure-data/</link>
       <pubDate>Sun, 15 Dec 2019 22:12:49 -0800</pubDate>
