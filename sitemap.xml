@@ -3,22 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kevingzhang.github.io/</loc>
+    <lastmod>2019-12-16T16:31:59-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kevingzhang.github.io/posts/</loc>
+    <lastmod>2019-12-16T16:31:59-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kevingzhang.github.io/posts/vrf-task-competing/</loc>
+    <lastmod>2019-12-16T16:31:59-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kevingzhang.github.io/tags/blockchain/</loc>
     <lastmod>2019-12-16T13:37:29-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://kevingzhang.github.io/posts/existing-centralzied-trust/</loc>
-    <lastmod>2019-12-16T13:37:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kevingzhang.github.io/</loc>
-    <lastmod>2019-12-16T13:37:29-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kevingzhang.github.io/posts/</loc>
     <lastmod>2019-12-16T13:37:29-08:00</lastmod>
   </url>
   
