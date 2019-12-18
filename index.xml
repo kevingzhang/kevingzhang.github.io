@@ -6,10 +6,19 @@
     <description>Recent content on Kevin Zhang - the Sweeper Monk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Dec 2019 16:31:59 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 10:11:41 -0800</lastBuildDate>
     
 	<atom:link href="https://kevingzhang.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Trustless Serverless Dapp</title>
+      <link>https://kevingzhang.github.io/posts/trustless-serverless-dapp/</link>
+      <pubDate>Tue, 17 Dec 2019 10:11:41 -0800</pubDate>
+      
+      <guid>https://kevingzhang.github.io/posts/trustless-serverless-dapp/</guid>
+      <description>Do not expect dApp is ready today, there are missing pieces TCP/IP was invented around the 1970s, Database 1980, but web app and mobile internet become popular around 2000. It takes about 30 years. Bitcoin was invented in 2009 which is so far the most popular blockchain application, There is no way for us to expect decentralized apps to get popular within 10 years? It will take some time to get all the pieces in the tech stack to get invented.</description>
+    </item>
     
     <item>
       <title>VRF Task Management and Consensus</title>
