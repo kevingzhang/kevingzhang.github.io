@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Kevin Zhang" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.63.1" />
+
+<link rel="canonical" href="https://kevingzhang.github.io/posts/leave-your-data-there/">
+<meta property="og:title" content="Leave Your Data There, I Will Send My App Over" />
+<meta property="og:description" content="Leave your data there, let me send my app over Today&rsquo;s cloud computing cannot handle tomorrow&rsquo;s use cases No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.
+In most cases today, we will deploy our code to a cloud provider (Amazon, Google, Microsoft, Alibaba, etc.)&lsquo;s cloud server inside a data center first, then upload the data into the same server, run the code, output the result." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kevingzhang.github.io/posts/leave-your-data-there/" />
+<meta property="article:published_time" content="2020-01-28T12:47:50-08:00" />
+<meta property="article:modified_time" content="2020-01-28T12:47:50-08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leave Your Data There, I Will Send My App Over"/>
+<meta name="twitter:description" content="Leave your data there, let me send my app over Today&rsquo;s cloud computing cannot handle tomorrow&rsquo;s use cases No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.
+In most cases today, we will deploy our code to a cloud provider (Amazon, Google, Microsoft, Alibaba, etc.)&lsquo;s cloud server inside a data center first, then upload the data into the same server, run the code, output the result."/>
+
+
+<meta itemprop="name" content="Leave Your Data There, I Will Send My App Over">
+<meta itemprop="description" content="Leave your data there, let me send my app over Today&rsquo;s cloud computing cannot handle tomorrow&rsquo;s use cases No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.
+In most cases today, we will deploy our code to a cloud provider (Amazon, Google, Microsoft, Alibaba, etc.)&lsquo;s cloud server inside a data center first, then upload the data into the same server, run the code, output the result.">
+<meta itemprop="datePublished" content="2020-01-28T12:47:50-08:00" />
+<meta itemprop="dateModified" content="2020-01-28T12:47:50-08:00" />
+<meta itemprop="wordCount" content="831">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Leave Your Data There, I Will Send My App Over 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://kevingzhang.github.io">Kevin Zhang - the Sweeper Monk</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="code ">
+"Bear with me as English is not my programming language"
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Leave Your Data There, I Will Send My App Over </h1>
+    <div class="content"> <h1 id="leave-your-data-there-let-me-send-my-app-over">Leave your data there, let me send my app over</h1>
+<h2 id="todays-cloud-computing-cannot-handle-tomorrows-use-cases">Today&rsquo;s cloud computing cannot handle tomorrow&rsquo;s use cases</h2>
+<p>No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.</p>
+<p>In most cases today, we will deploy our code to a cloud provider (Amazon, Google, Microsoft, Alibaba, etc.)&lsquo;s cloud server inside a data center first, then upload the data into the same server, run the code, output the result. This process is so-called cloud computing.</p>
+<p>There are some cases that the above common practice won&rsquo;t work.</p>
+<ul>
+<li>The compute node in one country, but the data is in another country where sending data out of the border may cause a legal issue.</li>
+<li>Either the data owner or the app owner does not trust the cloud provider. They have concerns that the cloud provider cannot keep their data or code secure.</li>
+<li>The data owner doesn&rsquo;t trust the app. He has a concern that the app developer has some back door to steal his data.</li>
+<li>The data size is huge that transfer from its original location to datacenter costs too much.</li>
+</ul>
+<p>There would be more cases I cannot cover here. In those cases, we need a new way to do computation. Such as &ldquo;Do not send data to me, I will send my code to you&rdquo; solution.</p>
+<h2 id="how-about-send-the-code-over-why-not">How about send the code over, why not?</h2>
+<p>Generally, the size of an app code is far less than the size of data to compute. And there are computers everywhere, why do not we send the app to the data owner&rsquo;s location and do the computing there. This solution sounds a reasonable and easy solution, but why have we not done that way? There are several problems. The biggest one is trust.</p>
+<p>The concern of trust comes from two factors:</p>
+<ul>
+<li>How do I know the result is correctly computed from exactly the data and by exactly the code?</li>
+<li>How do I know no one is watching or steal my data or my code during this process?</li>
+</ul>
+<p>In cloud computing cases, those concerns could be easily handled by the trust built from the brand name. We use Amazon because we trust Amazon given it is a big name, and they hired an army of security experts to protect their data center from hacked by malware. When the computer is outside of the cloud provider&rsquo;s data center but located in the middle of nowhere, those concerns are valid.</p>
+<h2 id="lets-solve-it-in-decentralized-way">Let&rsquo;s solve it in decentralized way</h2>
+<p>How do we solve it? I would use Trusted Computing and Confidential Computing in a Decentralized Way.</p>
+<h3 id="some-design-concerns">Some design concerns</h3>
+<p>There are a few design concerns we need to address:</p>
+<ul>
+<li>There should be a relatedly massive amount of compute nodes to get involved in computing. Although not all of them will be used during the computation, verifiable randomness is the best solution dealing with the collation and DDoS attacks.</li>
+<li>Computing nodes (Executors) and verify nodes are selected randomly and can be easily verified its randomness by other verifiers.</li>
+<li>Executors have TEE enabled CPU to run the tasks inside the enclave.</li>
+</ul>
+<h3 id="workflow">Workflow</h3>
+<p>The task execution workflow would look like the following steps:</p>
+<ul>
+<li>
+<p>Before eligible to run the task, the selected computing nodes (executor) can provide evidence showing its hardware/software states as Proof of Trust (PoT). Other verifiers can verify those Proof of Trust (PoT) remotely and make a consensus between all verifiers to judge the node is qualified or not.</p>
+</li>
+<li>
+<p>Both data and code are in encrypted cipher when at rest and in transit. Only the data owner and the code owner have their security keys.</p>
+</li>
+<li>
+<p>The executor creates enclave inside its TEE, load that encrypted code and data into the TEE. Send TEE verification requests to verifiers.</p>
+</li>
+<li>
+<p>After verifier made such a consensus, the data owner and the code owner send their security keys to a trusted execution environment (TEE).</p>
+</li>
+<li>
+<p>The executor decrypts the code and the data into the clear format, then run the code against the data inside TEE.</p>
+</li>
+<li>
+<p>After execution, TEE output the result then destroys the TEE.</p>
+</li>
+</ul>
+<h3 id="why-can-we-trust">Why can we trust?</h3>
+<p>In this design, we have the following assumptions:</p>
+<ul>
+<li>
+<p>Executors will report its hardware/software state honestly. This assumption can be guaranteed by TPM and Trusted Computing technology.</p>
+</li>
+<li>
+<p>The code and data inside the enclave are entirely hidden from any outsiders. Even the OS has no way to know anything inside the enclave. This assumption can be guaranteed by TEE technology.</p>
+</li>
+<li>
+<p>Verifiers cannot collude with the executor to cheat others. This assumption is guaranteed by blockchain technologies and the VRF algorithm.</p>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>So, such a decentralized confidential computing network based on blockchain technologies can provide a possibility that is not possible before. The data owners do not need to send their data to datacenter at risk of leaking privacy, and they do not need to trust app developers nor cloud providers either. They only need to trust math and semiconduction technologies.</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 28 Jan 2020 </div>
+  </div>
+
+</footer>
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:kevin.zhang.canada@gmail.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/kevingzhang" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/pushbar" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/kevin.zhang.canada@gmail.com" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://kevingzhang.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

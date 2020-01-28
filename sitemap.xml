@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://kevingzhang.github.io/posts/ipfs-miners-add-compute-power/</loc>
-    <lastmod>2019-12-18T21:24:15-08:00</lastmod>
+    <loc>https://kevingzhang.github.io/</loc>
+    <lastmod>2020-01-28T12:47:50-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://kevingzhang.github.io/</loc>
-    <lastmod>2019-12-18T21:24:15-08:00</lastmod>
+    <loc>https://kevingzhang.github.io/posts/leave-your-data-there/</loc>
+    <lastmod>2020-01-28T12:47:50-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://kevingzhang.github.io/posts/</loc>
+    <lastmod>2020-01-28T12:47:50-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kevingzhang.github.io/posts/ipfs-miners-add-compute-power/</loc>
     <lastmod>2019-12-18T21:24:15-08:00</lastmod>
   </url>
   
@@ -63,7 +68,21 @@
   </url>
   
   <url>
+    <loc>https://kevingzhang.github.io/ideas/intro_in_chinese/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kevingzhang.github.io/posts/temp_notes/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kevingzhang.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kevingzhang.github.io/ideas/</loc>
   </url>
   
 </urlset>

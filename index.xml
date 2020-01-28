@@ -6,10 +6,20 @@
     <description>Recent content on Kevin Zhang - the Sweeper Monk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Dec 2019 21:24:15 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jan 2020 12:47:50 -0800</lastBuildDate>
     
 	<atom:link href="https://kevingzhang.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leave Your Data There, I Will Send My App Over</title>
+      <link>https://kevingzhang.github.io/posts/leave-your-data-there/</link>
+      <pubDate>Tue, 28 Jan 2020 12:47:50 -0800</pubDate>
+      
+      <guid>https://kevingzhang.github.io/posts/leave-your-data-there/</guid>
+      <description>Leave your data there, let me send my app over Today&amp;rsquo;s cloud computing cannot handle tomorrow&amp;rsquo;s use cases No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.
+In most cases today, we will deploy our code to a cloud provider (Amazon, Google, Microsoft, Alibaba, etc.)&amp;lsquo;s cloud server inside a data center first, then upload the data into the same server, run the code, output the result.</description>
+    </item>
     
     <item>
       <title>Ipfs Miners Add Compute Power</title>
@@ -35,7 +45,7 @@
       <pubDate>Mon, 16 Dec 2019 16:31:59 -0800</pubDate>
       
       <guid>https://kevingzhang.github.io/posts/vrf-task-competing/</guid>
-      <description>I listed several principles in my previous post. Let&#39;s discuss them one by one.
+      <description>I listed several principles in my previous post. Let&amp;rsquo;s discuss them one by one.
 How blockchain solve this kind of issue? BTC and other Blockchain projects gave us a good example of using randomness. BTC uses the PoW (Proof of Work) consensus to generate the randomness. No one can predict which miner will win the next block in the hash power competition. An attacker has to own more than 51% hash power to attack the BTC network, which means the attack cost is super high.</description>
     </item>
     
@@ -54,8 +64,8 @@ How blockchain solve this kind of issue? BTC and other Blockchain projects gave 
       <pubDate>Sun, 15 Dec 2019 22:12:49 -0800</pubDate>
       
       <guid>https://kevingzhang.github.io/posts/secure-data/</guid>
-      <description>When we talking about secure our data, we actually mean three different stages of a data&#39;s life.
-Data at rest: When data is sleeping in someone&#39;s hard drive. Data in transit: Data is transferred between two trusted domains. eg. from a database server to compute node, or from your browser to a server. Data in use: Data is calculated inside a machine (RAM and CPU) Data in transit problem has been resolved by cryptography, such as https have been widely used.</description>
+      <description>When we talking about secure our data, we actually mean three different stages of a data&amp;rsquo;s life.
+Data at rest: When data is sleeping in someone&amp;rsquo;s hard drive. Data in transit: Data is transferred between two trusted domains. eg. from a database server to compute node, or from your browser to a server. Data in use: Data is calculated inside a machine (RAM and CPU) Data in transit problem has been resolved by cryptography, such as https have been widely used.</description>
     </item>
     
     <item>
@@ -65,6 +75,41 @@ Data at rest: When data is sleeping in someone&#39;s hard drive. Data in transit
       
       <guid>https://kevingzhang.github.io/posts/my-first-post/</guid>
       <description>I have not written any blog since 2013. Yes, I did write blogs, a long time ago. It was in the year 2005 when my daughter Emma was born. That was also the year my family and I immigrated to Canada. I wrote blogs almost every day about my everyday life as a new immigrant from an eastern country. There are too many things to be written to remember since not everyone has the chance to have the 2nd life - first 35 years living in the eastern world and the rest N (N =?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kevingzhang.github.io/ideas/intro_in_chinese/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kevingzhang.github.io/ideas/intro_in_chinese/</guid>
+      <description>摘要 本文提议了一种建立在区块链共识协议上的点对点的安全认证系统。随机可验证地选择验证节点对其他参与节点的TPM提供的数据进行去中心化的安全认证。从而在节点之间形成信任。这种信任可以用于隐私计算和信息安全。
+背景 5G的普及带来边缘计算可信的需求 5G已经开始在中国等国家快速部署。接踵而来等一个新挑战就是大量数据需要在网络边缘节点上进行计算而不是送到传统到数据中心去处理，这样会大大减少骨干网的带宽占用。但是在边缘节点计算产生了一个信任问题：数据中心的节点因为在比较严格的安全保护之下，基本上可以信任，但是边缘节点就比较难以获得广泛的信任。因此需要一种去中心化的通用手段为这些节点提供信任鉴定评级和监控。
+隐私计算和可信计算 计算机系统越来越复杂，参与计算的节点数量和软件代码数量飞速增加。人类生活越来越严重依赖计算机给出的计算结果。如何让人们相信计算机系统给出的计算结果和数据是准确可信的？如何进行验证？
+社交网络越来越普及，网络金融网络医疗深入方方面面。这些数据涉及到大量的用户隐私。虽然早有法律要求服务方保护用户隐私，但是由于缺乏有效的技术手段，用户隐私泄漏的事故仍然不断发生，愈演愈烈。
+尽管有各种保护计算机系统安全的软硬件方案，但是真正做到完全的计算机安全是不可能的。所以计算机系统的攻击和反攻击是一对此消彼长的共同发展进步的矛盾。我们需要设计一套通用而且可以自主更新的不需要认为干预的安全网络平台。
+去中心化的认证 基于TPM芯片进行的可信计算已经被广泛使用在Windows平台的PC上。主要被Windows用于检查宿主机是否足够可信来运行自己。一个更加广泛的应用在于让网络通讯参与方可以在提供自己的隐私数据之前确保对方也是可信的。这样可以用于保护隐私数据和信息安全。虽然TPM芯片是硬件，但是目前用于远程验证的逻辑仍然是软件。因此其他节点给出的远程验证的结果存在可信度的质疑。在大多数商业场景下，具有对其他节点进行安全认证这样的专业知识的节点很少。目前的主流方式都是采用中心化的认证方式，类似于现有的HTTPS的Ceritfication分发机制。在区块链这种去中心化的时代，显然不应该由一个中心机构来进行这样的认证。只有完全去中心化的基于区块链的认证方式才可以做到安全可信不可摧毁。
+Https无法解决安全可信问题 除了中心化这个问题之外，https只能保证客户访问的那个服务器上有一个已知的key，所以肯定不是冒充的节点。从而可以和那个服务器建立安全的加密连接。但是https无法保证服务器的代码是不是已经被黑客篡改加入木马。所以需要另外的机制来对网络对端的更加底层的技术栈进行验证从而产生信任。这个信任需要很深的网络安全知识，而且会经常更新变动。这些能力不是一般网络浏览器和一般用户具备的。
+解决思路 TPM提供Secure Boot信息留给其他节点进行验证 TPM作为电脑都已经具备都安全芯片已经实现从启动都时候就采集必要的数据并存储都不可篡改的区域等待验证方来进行验证。
+验证方必须是其他节点，而且必须是随机可验证的 自己对自己的机器给出的安全验证结果往往存在可信度的问题。如果是某个固定的中心化的第三方提出的验证虽然可信度好一些，但是仍然存在贿赂串通或者技术上的单点故障的担心。 最好的方式就是用区块链的思路，进行P2P，也就是点对点的验证。这些参与验证的节点都需要通过其他节点的资格验证从而避免串通作弊的可能。在验证节点之间还需要进行拜占庭容错共识从而避免真的有不超过1/3的腐败节点作恶造成结果不可信。
+所有这些技术都已经在区块链上得到广泛成熟的应用。
+技术实现 建立区块链共识算法 VRF选择验证节点算法 VRF是可验证随机函数的意思，已经在区块链上得到很广泛的应用。我们使用这个算法来随机选择验证节点，并且这个选择可以被其他节点进行简单验证从而避免串通。
+抵押和奖惩 为了提高犯罪成本降低犯罪成功概率。所有愿意参与验证的节点都需要进行一定程度的抵押并接受智能合约的奖惩。简单的描述就是如果诚实验证即可获得奖励金钱和信用积分，如果恶意或者懒惰就得到处罚。从概率上可以证明一个好的奖惩机制可以让作恶的成本超过作恶的收益。
+动态融入各种TPM和TEE的验证算法函数 从TPM存储的数据到作出是否可信的结论需要一个验证算法。这个算法不是已成固定不变的，而是随着时间的推进，矛与盾不断的较量和提升过程中不断升级变化的。所以这个算法的代码需要通过区块链分发存储和验证。好在区块链最擅长干这个了。
+API接口，对外提供安全信用查询和TPM输入接口 可以使用目前已有的REST API，或者区块链领域广泛采纳的P2P网络。
+部署Bootstrap节点开始传播壮大 和Bitcoin类似，先部署最初的Genesis Block和Genesis Nodes组成网络。通过这些初期节点逐步认证新加入的节点从而扩大网络规模。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kevingzhang.github.io/posts/temp_notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kevingzhang.github.io/posts/temp_notes/</guid>
+      <description>IPFS vs traditional web IPFS tell your what to look for, but traffitional web do where to look for.
+In traditional web, if the server you access is comprimised, you probably get a modified verison of the content you are looking for. In most cases, the modified version contains trojan or virus.
+In IPFS, it won&amp;rsquo;t happen. You can verify the hash.
+From https://blog.cloudflare.com/distributed-web-gateway/</description>
     </item>
     
   </channel>

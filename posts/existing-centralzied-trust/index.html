@@ -7,7 +7,7 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.61.0" />
+<meta name="generator" content="Hugo 0.63.1" />
 
 <link rel="canonical" href="https://kevingzhang.github.io/posts/existing-centralzied-trust/">
 <meta property="og:title" content="Existing Centralized Trust Solution" />
@@ -91,19 +91,19 @@
 <p>This sounds attractive but lays a few problems need to be resolved.</p>
 <p>To defeat attackers, we need to think like an economist. We need to follow two principles:</p>
 <ul>
-<li>the attacker's cost higher than the benefit.</li>
-<li>the defender's cost lower than the attacker's cost.</li>
+<li>the attacker&rsquo;s cost higher than the benefit.</li>
+<li>the defender&rsquo;s cost lower than the attacker&rsquo;s cost.</li>
 </ul>
-<p>If the confidential information is the source of profit from the attacker's point of view, protect information is much harder than protect any physical matter. Unlike gold or oil or any real matter, information can be copied and each copy has the same value as the original copy. This is the same reason why DRM (Digital Right Management) never worked well. If we distribute by store multiple copies of information to many nodes, we just expand the attacking surface, that getting worse.</p>
+<p>If the confidential information is the source of profit from the attacker&rsquo;s point of view, protect information is much harder than protect any physical matter. Unlike gold or oil or any real matter, information can be copied and each copy has the same value as the original copy. This is the same reason why DRM (Digital Right Management) never worked well. If we distribute by store multiple copies of information to many nodes, we just expand the attacking surface, that getting worse.</p>
 <p>Distributing information to many smaller nodes also makes protection harder or more expensive. Big tech giants can afford expensive facilities and highly skilled professionals to protect their main data center, but smaller distributed node owners may not able to afford it.</p>
-<p>What's the solution then?</p>
+<p>What&rsquo;s the solution then?</p>
 <p>Before I bring up my solution, please follow my logic first. There are a few things we can do in combination.</p>
 <ul>
 <li>
 <p>As we discussed in a previous post, we can use cryptography to protect data at rest and data in transit. Then we could only focus on the hardest case: data in use. Therefore, the cost of defense is significantly reduced.</p>
 </li>
 <li>
-<p>If there are millions of nodes in the p2p network, at any given time, only very few nodes are doing valuable computation which worth for hackers to attack. However, the zero-knowledge algorithm can keep anyone from knowing who they are. If hackers just random attack every node, the chance will be too low to cover hacker's cost.</p>
+<p>If there are millions of nodes in the p2p network, at any given time, only very few nodes are doing valuable computation which worth for hackers to attack. However, the zero-knowledge algorithm can keep anyone from knowing who they are. If hackers just random attack every node, the chance will be too low to cover hacker&rsquo;s cost.</p>
 </li>
 <li>
 <p>We keep the diversity of the tech stack and topology of our p2p network. Each node is independent of other nodes, there is no such a single-center node to control others. Each node is running a technical stack from the combinations of several hardware/software technologies. If a couple of technologies are comprised will not cause more then 1/3 of total nodes to fail at any given time.</p>
