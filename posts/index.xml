@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Kevin Zhang - the Sweeper Monk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jan 2020 12:47:50 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jan 2020 13:47:50 -0800</lastBuildDate>
     
 	<atom:link href="https://kevingzhang.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Leave Your Data There, I Will Send My App Over</title>
       <link>https://kevingzhang.github.io/posts/leave-your-data-there/</link>
-      <pubDate>Tue, 28 Jan 2020 12:47:50 -0800</pubDate>
+      <pubDate>Tue, 28 Jan 2020 13:47:50 -0800</pubDate>
       
       <guid>https://kevingzhang.github.io/posts/leave-your-data-there/</guid>
       <description>Leave your data there, let me send my app over Today&amp;rsquo;s cloud computing cannot handle tomorrow&amp;rsquo;s use cases No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.
