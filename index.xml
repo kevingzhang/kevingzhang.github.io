@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Just Had My Longest Vacation</title>
+      <title>Just Had My Longest Vacation and Back to Work</title>
       <link>https://kevingzhang.github.io/posts/just-had-my-longest-vacation/</link>
       <pubDate>Tue, 28 Jan 2020 15:07:43 -0800</pubDate>
       
       <guid>https://kevingzhang.github.io/posts/just-had-my-longest-vacation/</guid>
-      <description>I just had my longest vacation and back to work I did not update my blog for a month. Where did I go? I just had my longest vacation since my first job. I went to Florida and Bamahas Islands cruise vacation with my family. After that, I went to the Arizona desert for a camping trip with my RV group members. It took me about a month in total. I never had such an extended vacation in my whole life because I have never been laid off.</description>
+      <description>I did not update my blog for a month. Where did I go? I just had my longest vacation since my first job. I went to Florida and Bamahas Islands cruise vacation with my family. After that, I went to the Arizona desert for a camping trip with my RV group members. It took me about a month in total. I never had such an extended vacation in my whole life because I have never been laid off.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Tue, 28 Jan 2020 13:47:50 -0800</pubDate>
       
       <guid>https://kevingzhang.github.io/posts/leave-your-data-there/</guid>
-      <description>Leave your data there, let me send my app over Today&amp;rsquo;s cloud computing cannot handle tomorrow&amp;rsquo;s use cases No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.
+      <description>Today&amp;rsquo;s cloud computing cannot handle tomorrow&amp;rsquo;s use cases No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.
 In most cases today, we will deploy our code to a cloud provider (Amazon, Google, Microsoft, Alibaba, etc.)&amp;lsquo;s cloud server inside a data center first, then upload the data into the same server, run the code, output the result.</description>
     </item>
     
