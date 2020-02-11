@@ -36,8 +36,10 @@
       <pubDate>Tue, 28 Jan 2020 13:47:50 -0800</pubDate>
       
       <guid>https://kevingzhang.github.io/posts/leave-your-data-there/</guid>
-      <description>Today&amp;rsquo;s cloud computing cannot handle tomorrow&amp;rsquo;s use cases No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.
-In most cases today, we will deploy our code to a cloud provider (Amazon, Google, Microsoft, Alibaba, etc.)&amp;lsquo;s cloud server inside a data center first, then upload the data into the same server, run the code, output the result.</description>
+      <description>Today&amp;rsquo;s cloud computing cannot handle tomorrow&amp;rsquo;s use cases Computation involves data being processed by an algorithm.
+Today, cloud computing makes a compelling environment for data processing, in which we will typically deploy our code to a service provider&amp;rsquo;s data center and also upload our data to servers of the same data center.
+There are cases that the above common practice won&amp;rsquo;t work.
+ National data residency requirements prohibit sending the data to another country where the cloud computing node resides.</description>
     </item>
     
     <item>

@@ -7,12 +7,14 @@
 <meta name="description" content="Personal blog." />
 <meta name="keywords" content="blog, tech" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.63.1" />
+<meta name="generator" content="Hugo 0.64.0" />
 
 <link rel="canonical" href="https://kevingzhang.github.io/posts/leave-your-data-there/">
 <meta property="og:title" content="Leave Your Data There, I Will Send My App Over" />
-<meta property="og:description" content="Today&rsquo;s cloud computing cannot handle tomorrow&rsquo;s use cases No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.
-In most cases today, we will deploy our code to a cloud provider (Amazon, Google, Microsoft, Alibaba, etc.)&lsquo;s cloud server inside a data center first, then upload the data into the same server, run the code, output the result." />
+<meta property="og:description" content="Today&rsquo;s cloud computing cannot handle tomorrow&rsquo;s use cases Computation involves data being processed by an algorithm.
+Today, cloud computing makes a compelling environment for data processing, in which we will typically deploy our code to a service provider&rsquo;s data center and also upload our data to servers of the same data center.
+There are cases that the above common practice won&rsquo;t work.
+ National data residency requirements prohibit sending the data to another country where the cloud computing node resides." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kevingzhang.github.io/posts/leave-your-data-there/" />
 <meta property="article:published_time" content="2020-01-28T13:47:50-08:00" />
@@ -20,16 +22,20 @@ In most cases today, we will deploy our code to a cloud provider (Amazon, Google
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Leave Your Data There, I Will Send My App Over"/>
-<meta name="twitter:description" content="Today&rsquo;s cloud computing cannot handle tomorrow&rsquo;s use cases No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.
-In most cases today, we will deploy our code to a cloud provider (Amazon, Google, Microsoft, Alibaba, etc.)&lsquo;s cloud server inside a data center first, then upload the data into the same server, run the code, output the result."/>
+<meta name="twitter:description" content="Today&rsquo;s cloud computing cannot handle tomorrow&rsquo;s use cases Computation involves data being processed by an algorithm.
+Today, cloud computing makes a compelling environment for data processing, in which we will typically deploy our code to a service provider&rsquo;s data center and also upload our data to servers of the same data center.
+There are cases that the above common practice won&rsquo;t work.
+ National data residency requirements prohibit sending the data to another country where the cloud computing node resides."/>
 
 
 <meta itemprop="name" content="Leave Your Data There, I Will Send My App Over">
-<meta itemprop="description" content="Today&rsquo;s cloud computing cannot handle tomorrow&rsquo;s use cases No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.
-In most cases today, we will deploy our code to a cloud provider (Amazon, Google, Microsoft, Alibaba, etc.)&lsquo;s cloud server inside a data center first, then upload the data into the same server, run the code, output the result.">
+<meta itemprop="description" content="Today&rsquo;s cloud computing cannot handle tomorrow&rsquo;s use cases Computation involves data being processed by an algorithm.
+Today, cloud computing makes a compelling environment for data processing, in which we will typically deploy our code to a service provider&rsquo;s data center and also upload our data to servers of the same data center.
+There are cases that the above common practice won&rsquo;t work.
+ National data residency requirements prohibit sending the data to another country where the cloud computing node resides.">
 <meta itemprop="datePublished" content="2020-01-28T13:47:50-08:00" />
 <meta itemprop="dateModified" content="2020-01-28T13:47:50-08:00" />
-<meta itemprop="wordCount" content="821">
+<meta itemprop="wordCount" content="804">
 
 
 
@@ -90,70 +96,70 @@ In most cases today, we will deploy our code to a cloud provider (Amazon, Google
 <article class="post">
     <h1 class="title"> Leave Your Data There, I Will Send My App Over </h1>
     <div class="content"> <h2 id="todays-cloud-computing-cannot-handle-tomorrows-use-cases">Today&rsquo;s cloud computing cannot handle tomorrow&rsquo;s use cases</h2>
-<p>No matter what kind of computation we need to put input data and algorithm code together into a computer, and run the algorithm against the data so that we can get the result.</p>
-<p>In most cases today, we will deploy our code to a cloud provider (Amazon, Google, Microsoft, Alibaba, etc.)&lsquo;s cloud server inside a data center first, then upload the data into the same server, run the code, output the result. This process is so-called cloud computing.</p>
-<p>There are some cases that the above common practice won&rsquo;t work.</p>
+<p>Computation involves data being processed by an algorithm.</p>
+<p>Today, cloud computing makes a compelling environment for data processing, in which we will typically deploy our code to a service provider&rsquo;s data center and also upload our data to servers of the same data center.</p>
+<p>There are cases that the above common practice won&rsquo;t work.</p>
 <ul>
-<li>The compute node in one country, but the data is in another country where sending data out of the border may cause a legal issue.</li>
+<li>National data residency requirements prohibit sending the data to another country where the cloud computing node resides.</li>
 <li>Either the data owner or the app owner does not trust the cloud provider. They have concerns that the cloud provider cannot keep their data or code secure.</li>
-<li>The data owner doesn&rsquo;t trust the app. He has a concern that the app developer has some back door to steal his data.</li>
-<li>The data size is huge that transfer from its original location to datacenter costs too much.</li>
+<li>The data owner doesn&rsquo;t trust the app, worrying that the app developer has a back door to steal his data.</li>
+<li>The data size is so large that it is cost proohibitive to transfer the data from its original location to the datacenter.</li>
 </ul>
-<p>There would be more cases I cannot cover here. In those cases, we need a new way to do computation. Such as &ldquo;Do not send data to me, I will send my code to you&rdquo; solution.</p>
+<p>In the cases above, among others, we need to change the way computation is done. How about the &ldquo;Do not send data to me, I will send my code to you&rdquo; approach?</p>
 <h2 id="how-about-send-the-code-over-why-not">How about send the code over, why not?</h2>
-<p>Generally, the size of an app code is far less than the size of data to compute. And there are computers everywhere, why do not we send the app to the data owner&rsquo;s location and do the computing there. This solution sounds a reasonable and easy solution, but why have we not done that way? There are several problems. The biggest one is trust.</p>
-<p>The concern of trust comes from two factors:</p>
+<p>Generally, the size of the application code is far less than the size of the data to process. So it is more economical to send the application code to where the data resides do the computing there. But why have we not done so? There are several problems. The biggest one is trust.</p>
+<p>The concern of trust comes from two angles:</p>
 <ul>
-<li>How do I know the result is correctly computed from exactly the data and by exactly the code?</li>
-<li>How do I know no one is watching or steal my data or my code during this process?</li>
+<li>How do I know the result is correctly computed from data and the code that have been provided?</li>
+<li>How do I know no one is watching or try to steal the data or the code during this process?</li>
 </ul>
-<p>In cloud computing cases, those concerns could be easily handled by the trust built from the brand name. We use Amazon because we trust Amazon given it is a big name, and they hired an army of security experts to protect their data center from hacked by malware. When the computer is outside of the cloud provider&rsquo;s data center but located in the middle of nowhere, those concerns are valid.</p>
+<p>In today&rsquo;s cloud computing scenario, these concerns could be easily addressed by the trust in the brand name. We use Amazon because we trust Amazon given it is a big name, and they hired an army of security experts to protect their data center from hacking or malware. But when the computer is outside of a trusted cloud provider&rsquo;s data center and located in the middle of nowhere, those concerns become very valid.</p>
 <h2 id="lets-solve-it-in-decentralized-way">Let&rsquo;s solve it in decentralized way</h2>
-<p>How do we solve it? I would use Trusted Computing and Confidential Computing in a Decentralized Way.</p>
+<p>How do we solve this probelm? I propose the use of Trusted Computing and Confidential Computing in a Decentralized Way.</p>
 <h3 id="some-design-concerns">Some design concerns</h3>
-<p>There are a few design concerns we need to address:</p>
+<p>My proposal has the following key elements:</p>
 <ul>
-<li>There should be a relatedly massive amount of compute nodes to get involved in computing. Although not all of them will be used during the computation, verifiable randomness is the best solution dealing with the collation and DDoS attacks.</li>
-<li>Computing nodes (Executors) and verify nodes are selected randomly and can be easily verified its randomness by other verifiers.</li>
-<li>Executors have TEE enabled CPU to run the tasks inside the enclave.</li>
+<li>There should be a relatedly massive amount of compute nodes involved in this decentralized network of computers. Although not all of them will be used during the computation, verifiable randomness is the best solution for dealing with the collusion and DDoS attacks.</li>
+<li>Computing nodes (executors) and verifying nodes are selected using verifiable randomness.</li>
+<li>Executors have TEE-enabled CPU to run the tasks inside the secure enclave. TEE stands for trusted execution environment.</li>
 </ul>
 <h3 id="workflow">Workflow</h3>
-<p>The task execution workflow would look like the following steps:</p>
+<p>The task execution workflow has the following steps:</p>
 <ul>
 <li>
-<p>Before eligible to run the task, the selected computing nodes (executor) can provide evidence showing its hardware/software states as Proof of Trust (PoT). Other verifiers can verify those Proof of Trust (PoT) remotely and make a consensus between all verifiers to judge the node is qualified or not.</p>
+<p>Before becoming eligible to run a computation task, the selected computing nodes (executors) must provide evidence showing its hardware/software states as Proof of Trust (PoT). Other node (verifiers) on the network can verify those Proof of Trust (PoT) remotely and reach a consensus between all verifiers to whether the node is qualified or not.</p>
 </li>
 <li>
-<p>Both data and code are in encrypted cipher when at rest and in transit. Only the data owner and the code owner have their security keys.</p>
+<p>Both data and code are in encrypted format when at rest and in transit. Only the data owner and the code owner have their decryption keys.</p>
 </li>
 <li>
-<p>The executor creates enclave inside its TEE, load that encrypted code and data into the TEE. Send TEE verification requests to verifiers.</p>
+<p>The executor 1) creates an enclave inside its TEE, 2) loads that encrypted code and data into the enclase, and 3) sends a TEE verification request to verifiers on the network.</p>
 </li>
 <li>
-<p>After verifier made such a consensus, the data owner and the code owner send their security keys to a trusted execution environment (TEE).</p>
+<p>After verifiers have reached a consensus, the data owner and the code owner send their decryption keys to the trusted execution environment (TEE).</p>
 </li>
 <li>
-<p>The executor decrypts the code and the data into the clear format, then run the code against the data inside TEE.</p>
+<p>The executor decrypts the code and the data, and runs the code against the data inside the TEE.</p>
 </li>
 <li>
-<p>After execution, TEE output the result then destroys the TEE.</p>
+<p>After execution, TEE outputs the result and then destroys the enclave.</p>
 </li>
 </ul>
 <h3 id="why-can-we-trust">Why can we trust?</h3>
 <p>In this design, we have the following assumptions:</p>
 <ul>
 <li>
-<p>Executors will report its hardware/software state honestly. This assumption can be guaranteed by TPM and Trusted Computing technology.</p>
+<p>Executors will report its hardware/software state honestly. This assumption can be guaranteed by TPM (trusted platform module) and other Trusted Computing technologies.</p>
 </li>
 <li>
-<p>The code and data inside the enclave are entirely hidden from any outsiders. Even the OS has no way to know anything inside the enclave. This assumption can be guaranteed by TEE technology.</p>
+<p>The code and data inside the enclave are entirely hidden from any outsiders. Even the OS has no way to know anything inside the enclave. This assumption can be guaranteed by the TEE technology.</p>
 </li>
 <li>
-<p>Verifiers cannot collude with the executor to cheat others. This assumption is guaranteed by blockchain technologies and the VRF algorithm.</p>
+<p>Verifiers cannot collude with the executor to cheat others. This assumption is guaranteed by blockchain technologies and the VRF (verifiable random function) algorithm.</p>
 </li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
-<p>So, such a decentralized confidential computing network based on blockchain technologies can provide a possibility that is not possible before. The data owners do not need to send their data to datacenter at risk of leaking privacy, and they do not need to trust app developers nor cloud providers either. They only need to trust math and semiconduction technologies.</p>
+<p>In summary, the proposed decentralized confidential computing network based on blockchain technologies provides a new way of computation that was not possible before. The data owners do not need risk data privacy in sending their data to someone else&rsquo;s data center, and they do not need worry about the application developer either. They only need to trust the secure enclave and blockchain consensus, which have been proven trustworthy under very reasonable conditions.</p>
  </div>
     <footer class="post-footer">
 
