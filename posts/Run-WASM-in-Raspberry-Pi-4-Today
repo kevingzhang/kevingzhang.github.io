@@ -1,7 +1,7 @@
 ---
 title: "Run WASM in Raspberry Pi 4 Today"
 date: 2020-03-03T11:48:30-08:00
-draft: true
+draft: false
 ---
 
 WebAssembly (WASM) can run in almost all OS and architect, including Raspberry Pi. However, at the time of my test (Mar 1, 2020), only the wasmer claim and successfully run on my Pi 4. Other runtimes are either in planned mode or WIP. 
