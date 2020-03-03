@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Kevin Zhang - the Sweeper Monk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jan 2020 20:22:55 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2020 11:48:30 -0800</lastBuildDate>
     
 	<atom:link href="https://kevingzhang.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Run WASM in Raspberry Pi 4 Today</title>
+      <link>https://kevingzhang.github.io/posts/run-wasm-in-raspberry-pi-4-today/</link>
+      <pubDate>Tue, 03 Mar 2020 11:48:30 -0800</pubDate>
+      
+      <guid>https://kevingzhang.github.io/posts/run-wasm-in-raspberry-pi-4-today/</guid>
+      <description>WebAssembly (WASM) can run in almost all OS and architect, including Raspberry Pi. However, at the time of my test (Mar 1, 2020), only the wasmer claim and successfully run on my Pi 4. Other runtimes are either in planned mode or WIP.
+I would like to share some of my experiences running WASM in Raspberry PI4 and some mistakes I made during the test. I hope it can help you if you want to try the same thing on your Pi.</description>
+    </item>
     
     <item>
       <title>Possible improvement for Dgraph Badger encryption at rest</title>
