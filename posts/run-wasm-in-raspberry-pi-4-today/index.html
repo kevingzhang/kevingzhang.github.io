@@ -29,7 +29,7 @@ I would like to share some of my experiences running WASM in Raspberry PI4 and s
 I would like to share some of my experiences running WASM in Raspberry PI4 and some mistakes I made during the test. I hope it can help you if you want to try the same thing on your Pi.">
 <meta itemprop="datePublished" content="2020-03-03T11:48:30-08:00" />
 <meta itemprop="dateModified" content="2020-03-03T11:48:30-08:00" />
-<meta itemprop="wordCount" content="883">
+<meta itemprop="wordCount" content="849">
 
 
 
@@ -148,26 +148,13 @@ default-backend-singlepass = [&quot;singlepass&quot;]
 default-backend-llvm = [&quot;llvm&quot;]
 default-backend-cranelift = [&quot;cranelift&quot;]
 deterministic-execution = [&quot;wasmer-singlepass-backend/deterministic-execution&quot;, &quot;wasmer-runtime-core/deterministic-execution&quot;]
-</code></pre><p>[features]
-default = [&ldquo;singlepass&rdquo;, &ldquo;default-backend-singlepass&rdquo;]
-docs = []
-cranelift = [&ldquo;wasmer-clif-backend&rdquo;]
-cache = [&ldquo;cranelift&rdquo;]
-llvm = [&ldquo;wasmer-llvm-backend&rdquo;]
-singlepass = [&ldquo;wasmer-singlepass-backend&rdquo;]
-default-backend-singlepass = [&ldquo;singlepass&rdquo;]
-default-backend-llvm = [&ldquo;llvm&rdquo;]
-default-backend-cranelift = [&ldquo;cranelift&rdquo;]
-deterministic-execution = [&ldquo;wasmer-singlepass-backend/deterministic-execution&rdquo;, &ldquo;wasmer-runtime-core/deterministic-execution&rdquo;]</p>
-<pre><code>Build again... Yeah, I made it!
 
-# Playing around Wasmer Rust Integration
-I did not try all examples, but it looks good to run rust host embedding wasmer-runtime all inside Raspberry Pi 4 with 4G RAM.
-
-The goal I want to try wasm on ARM is that I am looking for a confidential computing solution in my future project. I will write other blogs about this research project. Since wasm is small, portable, and secure, it is the best option for future Function-as-a-Service on Edge Computing as long as we can provide Trusted Computing to guard the execution. Well, this could be a big topic. I would like to leave it to my later blog posts. Please stay tuned and leave comments below. I am happy to discuss with anyone who interests in Confidential Computing, Trusted Computing, and Edge Computing topics.
-
-Happy Coding!
-</code></pre> </div>
+</code></pre><p>Build again&hellip; Yeah, I made it!</p>
+<h1 id="playing-around-wasmer-rust-integration">Playing around Wasmer Rust Integration</h1>
+<p>I did not try all examples, but it looks good to run rust host embedding wasmer-runtime all inside Raspberry Pi 4 with 4G RAM.</p>
+<p>The goal I want to try wasm on ARM is that I am looking for a confidential computing solution in my future project. I will write other blogs about this research project. Since wasm is small, portable, and secure, it is the best option for future Function-as-a-Service on Edge Computing as long as we can provide Trusted Computing to guard the execution. Well, this could be a big topic. I would like to leave it to my later blog posts. Please stay tuned and leave comments below. I am happy to discuss with anyone who interests in Confidential Computing, Trusted Computing, and Edge Computing topics.</p>
+<p>Happy Coding!</p>
+ </div>
     <footer class="post-footer">
 
   <div class="post-footer-data">
