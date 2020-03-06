@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Kevin Zhang" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.64.0" />
+
+<link rel="canonical" href="https://kevingzhang.github.io/posts/wasm_tpm_tee_0_eng/">
+<meta property="og:title" content="0 of N: Cover Letter of the Trusted WebAssembly Runtime on IPFS" />
+<meta property="og:description" content="TL;DR This is the first blog of the Trusted WebAssembly Runtime on the IPFS series. I explained how this idea comes during my recent few years of research. It actually covers most content of the whole series.
+Started 6 Years Ago Back to 6 years ago, I joined a Silicon Valley-based health care IoT company as CTO. The company produces many kinds of wearable health monitoring devices and collected tons of medical data from millions of users." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kevingzhang.github.io/posts/wasm_tpm_tee_0_eng/" />
+<meta property="article:published_time" content="2020-03-05T16:02:42-08:00" />
+<meta property="article:modified_time" content="2020-03-05T16:02:42-08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="0 of N: Cover Letter of the Trusted WebAssembly Runtime on IPFS"/>
+<meta name="twitter:description" content="TL;DR This is the first blog of the Trusted WebAssembly Runtime on the IPFS series. I explained how this idea comes during my recent few years of research. It actually covers most content of the whole series.
+Started 6 Years Ago Back to 6 years ago, I joined a Silicon Valley-based health care IoT company as CTO. The company produces many kinds of wearable health monitoring devices and collected tons of medical data from millions of users."/>
+
+
+<meta itemprop="name" content="0 of N: Cover Letter of the Trusted WebAssembly Runtime on IPFS">
+<meta itemprop="description" content="TL;DR This is the first blog of the Trusted WebAssembly Runtime on the IPFS series. I explained how this idea comes during my recent few years of research. It actually covers most content of the whole series.
+Started 6 Years Ago Back to 6 years ago, I joined a Silicon Valley-based health care IoT company as CTO. The company produces many kinds of wearable health monitoring devices and collected tons of medical data from millions of users.">
+<meta itemprop="datePublished" content="2020-03-05T16:02:42-08:00" />
+<meta itemprop="dateModified" content="2020-03-05T16:02:42-08:00" />
+<meta itemprop="wordCount" content="2066">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     0 of N: Cover Letter of the Trusted WebAssembly Runtime on IPFS 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://kevingzhang.github.io">Kevin Zhang - the Sweeper Monk</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="/tags/"><div class="nav-item-title">Tags</div></a>
+    
+
+  </nav>
+
+  
+<div class="code ">
+"Bear with me as English is not my programming language"
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 0 of N: Cover Letter of the Trusted WebAssembly Runtime on IPFS </h1>
+    <div class="content"> <h1 id="tldr">TL;DR</h1>
+<p>This is the first blog of the Trusted WebAssembly Runtime on the IPFS series. I explained how this idea comes during my recent few years of research. It actually covers most content of the whole series.</p>
+<h1 id="started-6-years-ago">Started 6 Years Ago</h1>
+<p>Back to 6 years ago, I joined a Silicon Valley-based health care IoT company as CTO. The company produces many kinds of wearable health monitoring devices and collected tons of medical data from millions of users. No doubt the medical data is money in the big data era. However, due to HIPAA and GDPR (health care data and privacy protection), without an effective technical solution, we cannot turn the data into money: We cannot take the risk of disclosure on patients&rsquo; medical data records. There are pharmaceutical institutes came to us would like to pay for use the data, but we have no way to protect the data once we give them. I would suggest they run research algorithm inside our server, of course, they cannot agree since the algorithm is their key IP, how could they trust us and give us their algorithm. There are some partial solutions such as De-ID, but not strong enough to protect. I was searching for a solution to help both the data providers and data users, but I did not make it at that moment.
+About 3 years ago Blockchain comes into my life. Using a consensus algorithm to build trust between untrusted parties really blow my mind. I think we probably can learn from blockchain and build something decentralized trusted computing system to protect privacy and data ownership.
+Very soon, one of my friends referred me to a blockchain company which also has the same idea — “You own your own data”. No doubt, I joined the project as a contractor shortly, in charge of the tech team in the USA. However, this did not last long. I resigned from this company after the first year contract. The main reason is that I found it is impossible to get high security purely based on software technologies. We have to either build on cryptography or hardware. I cannot convince the founder because he is a strong believer in his software along can be secure enough.
+I did not look for a new job after resignation because I need more time to continue my research. I do not want to join any project unless I am fully convinced by their technologies. It has been about one year, gradually I think I found the direction. I would like to share what I learn during these few years and what is on my mind. I hope anyone interested in this solution contacts me, either join me to build some cool thing together, or you already have a better project that I can be convinced to join you!</p>
+<h1 id="basically-it-is-all-about-trust">Basically it is all about trust</h1>
+<p>In a centralized system, trust won’t be an issue because the center itself could be in total control and the root of trust. But if there is no such a common center for all participating parties, the situation is much complicated. Use Bitcoin as an example, all miners work independently, there is no such a “CEO” of Bitcoin Inc existing. By natural any miner would like to make more money by cheating other miners if he can. But still, based on the consensus, the trust was established between untrusted miners, they work together to maintain the distributed ledger guarded by hash-power trustfulness. You cannot trust any individual miner, but you can trust Bitcoin.
+If we can find a solution to build trust between untrusted parties, for example, the medical data owners trust the data host will protect their personal data, the data host trust data processors won’t disclose data, then all those data can be utilized by the pharmaceutical labs can make new medicine to heal human being. More important, these kinds of trust are not based on legal, personality, but based on mathematics or physics rules. Human personality may change, but no one can change the physics rules.
+There are many directions people are trying to solve this problem. The biggest two branches are Cryptography and Hardware guarded Trusted Computing.</p>
+<h1 id="cryptography-vs-trusted-computing">Cryptography vs Trusted Computing</h1>
+<p>Cryptography is bulletproof because it is based on mathematics. The untrusted party can complete the computing job without actually know the secret at all. This sounds unbelievable but it actually works. However, no matter it uses ZKP, FHE or SMPC, there is a huge performance penalty. The complexity overhead is too much to use it practically. I know there are many new algorithms and new hardware accelerators being developed, so far we still need to find a more practical solution. So I turned into the hardware trusted computing solution.
+Trusted computing uses cryptography too but mainly relies on tamper-proof hardware. Well, nothing is absolute tamper-proof I know. The “tamper-proof” is relatively speaking to the software. Hardware is much harder to tamper without physical access. Software, on the other hand, is soft. It is relatively easy to modify code from thousands of miles away stealthy. Let’s assume the hardware is tamper-proof for now, so the hardware will always tell the truth or no response at remote attestation.</p>
+<h1 id="tpm-vs-tee">TPM vs TEE</h1>
+<p>We can use the hardware piece as Root of Trust. At least the verifier will know the system is still healthy at remote attestation. This is how TPM works. TPM is not a new technology. It has been used in most computers, phones or IoT devices for more than 10 years. TPM itself is a small cheap silicon chip with very limited computing power. That’s by design because the more complex it is, the more vulnerable inside. This concept is called small TCB(Trust Computing Base). However, if we are trying to use TPM to protect a large computer system with a large TCB, there would be some problems. TPM can do secure boot so that the verifier can know if the system boot as expected. After that, TPM can do very little to protect the complex software system. There could be any component contains vulnerable at any layer of the software stack cause information breach. It is impossible to protect all of them. So the key solution would be finding the small amount of code handling sensitive data, protect this small amount of code (and its data) in a special “enclave” using a technology called “TEE”. As long as the small chunk of code is “safe”, the whole system will be trusted.
+TEE sounds to be a better solution than TPM. But it needs a special design CPU to protect the enclave. Moreover, developers have to rewrite their applications to be run in the protected enclave. Not only because rewriting costs a lot, but also technical difficulties. Developers need to be very clear and confident about which part of the code will need to get protected and try to make the protected size as small as possible. This is called Partitioning. Depends on the technical stack and architect design of the original application, it could be easier or very hard. Some team (eg. MesaTEE) rewrite the essential part of OS into a memory-safe language (RUST) so that the syscall can be safely within the protected boundary. Of course, this will help the app developers a lot, but still make the enclave too big to keep secure.</p>
+<h1 id="since-rewriting-is-unavoidable-why-do-not-think-about-new-architects-such-as-wasm">Since rewriting is unavoidable, why do not think about new architects such as Wasm?</h1>
+<p>WebAssembly, neither web nor assembly ( <a href="https://www.youtube.com/watch?v=UtjoaTfbdcA">https://www.youtube.com/watch?v=UtjoaTfbdcA</a> ). It is a newly designed portable virtual ISA. There are so many features we can talk about but let’s just list a few features related to security:</p>
+<ul>
+<li>Isolation</li>
+<li>Linear memory</li>
+<li>Table of functions</li>
+<li>Interface (WASI)</li>
+<li>Strong Type</li>
+</ul>
+<p>There are more features worth a separate long blog to talk about. I will just give you one small example for now.
+If an application has access to some system resources (such read/write a folder, socket connection, etc), the whole process have access. Developers usually use 3rd party open source library in the project. If any of those libraries have vulnerable, the hacker can control the process to read/write some security information then send it back through the network. Do developers check every line of open source library they import to his project? Probably not, or cannot. Then even the code is running inside TEE, the code itself is an evil, TEE cannot help. But Wasm can help with this. Thanks awesome WASI team! For detail, please wait for my future blog on this.</p>
+<h1 id="since-wasm-is-portable-can-we-leave-data-where-it-was-we-send-bytecode-over">Since Wasm is portable, can we leave data where it was, we send bytecode over?</h1>
+<p>Wasm is designed to be portable and secure. It could (very likely) to be used as a general-purpose edge computing compile target.
+Nowadays, when we typically deploy server code to cloud computing datacenter, then client upload their data to the same server. When code and data meet together, the CPU does the computing, result send back to the client. Nothing wrong for today’s small data size. What if in the near future, the data to be computed is huge enough to be sent over the backbone network? When 5G becomes popular, the last-mile bandwidth become much bigger, and AI need tons of data, will our backbone or datacenter handle the traffic? Probably not. Why do not we leave the data where it was, but send the code (algorithm or function) to the data. The data and code meet together and computed not at the datacenter, but where data was stored. The code usually is much smaller than the data in this scenario. We not only save the backbond bandwidth but also reduce latency from the client’s experience.</p>
+<p>Wait for a minute, it won’t be useful until we can solve the trust issue. What is the trust issue? Well, we can trust AWS so the result from the AWS server can be trusted. But we cannot simply trust any random client or edge computing node. If there is no way to protect the security of data or code, chances are (a)the result may not be correct, or (b)the sensitive data leaking or both.</p>
+<h1 id="put-wasm-runtime-inside-tee-sounds-a-good-idea">Put wasm runtime inside TEE sounds a good idea</h1>
+<p>Now we already have TPM, TEE, Wasm, how about we put them together?
+Wasm runtime executes inside TEE so that we know outsiders (even the OS) cannot access the secret inside. The computing machine is protected by the TPM so that we know it is what it claimed to be. The node itself is the client or a CDN node or IPFS node which stored the data.
+Developers no longer need to deploy the server function code to cloud computing service providers. They just upload their static resources (app binary or HTML/CSS/js/wasm) to IPFS or CDN. Client apps do not need to upload their user data to the cloud server, it just sends requests to nearby computing node which caches code. The node make the computing inside its TEE and returns the result with proof of trust (PoT). The client machine also can also become a compute node if equipped with TEE. Because there is a PoT, everyone can verify this compute result and process can be trusted by remote attestation.</p>
+<h1 id="all-in-one-solution-a-hsm-to-put-everything-inside-plug-and-play">All-in-one solution: A HSM to put everything inside, plug and play</h1>
+<p>Not all CDN or IPFS miners’ boxes are equipped with what we need. A valid business idea probably would be make a small plug-and-play HSM (Hardware Secure Module) which contains everything we need. Miners just plug it in the IPFS box, the storage node soon becomes an edge computing node! Besides mining Filecoin, it can mine “ComputeCoin” as well.</p>
+<h1 id="trust-as-a-service">Trust as a Service!</h1>
+<p>It seems I cannot stop dumping my ideas into one blog, it could be too long to read. I may have to stop here before readers got bored. I will explain them one by one in my future blogs. The ultimate goal is to build a Trust as a Service (TaaS) business model. Of course, I cannot miss blockchain here to monetize.</p>
+<h1 id="stay-tuned-i-will-be-back-soon">Stay tuned! I will be back soon</h1>
+<p>Please subscribe to my blog so that you will get a notification when the next blog posts.
+Please leave your comments. I ‘d like to discuss with anyone who is interested in the same topic. If you already have a project doing exactly what I am doing, please let me know, we may work together!</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 5 Mar 2020 </div>
+  </div>
+
+</footer>
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:kevin.zhang.canada@gmail.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/kevingzhang" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/pushbar" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+  <a href="https://www.linkedin.com/in/kevin.zhang.canada@gmail.com" target="_blank"><div class="social-link">LinkedIn</div></a>
+  
+
+  <div class="social-link">
+  <a href="https://kevingzhang.github.io/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright">  </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+
