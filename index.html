@@ -114,73 +114,6 @@ Started 6 Years Ago Back to 6 years ago, I joined a Silicon Valley-based health 
     <article class="post-preview">
 
   <header>
-    <h2 class="title"> <a href='https://kevingzhang.github.io/posts/wasm_tpm_tee_0_chn/'> 第0篇：历史渊源和探索过程的快进版本</a> </h2>
-    <div class="meta">
-      <div class="date">
-      5 Mar, 2020 - 1 minutes
-      </div>
-      
-<div class="tags">
-    
-</div>
-
-    </div>
-
-  </header>
-
-  <div class="summary">
-    我在6年前在一家互联网医疗的公司任CTO。那时候为了HIPAA和GDPR这样保护健康数据医疗隐私的法案搞得焦头烂额。那时候我们已经通过我们的Wearable IoT医疗传感器采集了海量的用户的医疗健康数据。本来，因为没有有效的隐私保护，使得我们无法将这些数据变成财富。比如数据需求方，比如药厂研究所可以用这些数据来研发更加有效的解决慢性病的药物，但是我们并不信任对方会保护好这些隐私。万一发生隐私泄漏我们吃不了兜着走。对方也不可能把自己的分析工具和人员送到我们这里在我们的安全域内计算，毕竟他们的知识产权就是他们的财富。他们不会信任我们不会偷走他们的算法。采用DeID等手段能够绕过一部分法规问题，不过会损失安全性和分析的有效性。为了满足政府的法规要求，我们还支付了不少成本使用更加昂贵的所谓可以保护隐私的云服务。现在回头看来，他们实际上也没法保护隐私，只不过有什么手段让政府相信他们可以而已。 三年前区块链引起了我浓重的兴趣。其代表应用比特币很神奇地使用共识算法让本无信任的各方通过数学手段共同相信分布式账本记录的数字可以变成财富。我当时就朦胧地感觉到这种去中心化的新思路应该可以也用于隐私保护和数据确权。 很快朋友就推荐了一家区块链技术公司正好也有同样的目标。听起来梦想很宏大很有野心。于是我二话不说就和他们签了服务合同开始负责美国这边的技术团队。不过这段经历只持续了一年我就很快离开了。主要的原因是我发现现有的纯软件技术其实无法达到我们希望做成的保护数据隐私计算可信数据确权的目标。因为只要是软件就一定可以被其他软件修改。各种黑客的攻击手段极为有创造力，基本上是道高一尺魔高一丈。甚至连硬件层面上都可以发起旁路攻击。所以坚持纯软件靠当时的区块链技术我个人认为是走不出困境的。我就认定一定需要改变，要么使用硬件，要么使用加密学手段，而不是原有的改进操作系统使用传统区块链的思路。我的这个想法显然没有被管理层接纳。再加上比较大的文化差异造成经营管理上不同的理念，我于是很快就在第一年合同期满结束了这个合同。 离开这个项目后我并没有马上去找下份工作。因为我希望继续自己寻找一下这个问题的方案。差不多又是一年过去了，渐渐的目标和路径都略微清晰了。所以我应Harry的约稿，把我尝试研究过的方案整理一下，再把目前我看好的方向和方案介绍给大家，希望看明白并且相信这个技术路线的开发者投资者一起来参与。或者大家已经有了和我目标和路径一致的项目，也请告诉我，说不定我也可以加入一起做。
-本质问题是一个信任问题 在中心化或者可以找到中心的协作环境中，信任不是问题或者至少不是关键问题。因为中心就可以来担当信任的最终负责者。参与各方在这个中心的管理和负责下可以信任其他方从而大大降低成本合作完成计算。举例来说：你把你的代码Deploy给Amazon，就表示你信任Amazon有能力来保证你的代码安全和正确执行。你如果不信任你就不要去Deploy给它。 你的用户信任你，就把他们的数据给你，在你也信任的Amazon云计算环境下去计算。他们如果不相信你，就不会给你。传统上的信任往往通过人类自古以来形成的各种组织形式产生的。比如国家政府公司法律机构等等。总之信任先有了，后面就好解决了。 但是有一些没有中心但是还必须协作的情况下，问题就复杂很多。参与各方都有各自的小算盘，在无法从统一的中心施加强制力的前提下他们都有动机也有能力去违反约定获得更大的利益。但是反之如果不合作，大家都没有利益。这个典型的例子就是比特币的矿工之间可以在竞争下达成共识。这种竞争合作关系实际上是最稳固的。因此比特币经过10年多仍然是最广泛被信任的加密货币。
-隐私计算的密码学思路 比特币其实除了加减法之外不能进行什么有价值的计算。带有智能合约的区块链就可以进行有价值的计算，但是目前仍然存在效率和隐私的问题。因为计算的过程是在矿工的机器上完成的， 就算是矿工为了达成共识获得收益不会对计算结果进行篡改，但是计算过程中如果可以接触到有价值的隐私数据的话，我们有理由这个动机可以驱使计算者通过获得隐私数据来获利。尤其是当获得隐私获利这件事可以时候无法查证的时候，这个行为基本上可以认为必然发生。不信你可以试试把你的比特币私钥作为计算参数传入以太坊的合约。到时候就算不是矿工去拿其他观察交易记录的人也会把比特币拿走。你还没法知道是谁干的。 更新一代的合约通过加密学方法比如零知识同态加密多方隐私计算等手段可以很可靠的达到隐私保护。这些也是我最早尝试的方向。不过经过一段时间的探索感觉这些算法的overhead是数量级的增加。使用目前的计算能力来完成这么复杂的计算短时间内还难以进入通用实用的阶段。我知道有很多团队正在从不仅仅是数学方面也从底层硬件入手来提高效率，希望很快会看到突破性进展。
-可信计算的TPM和CPU思路 跳开加密学的思路我开始琢磨可信计算硬件的思路。这都算不上什么新技术了。几乎所有的稍微复杂一些的电子设备上或多或少有一些类似TPM的可信硬件嵌在主板上默默无闻地保证系统安全。比如近十年来生产的PC，Mac，绝大部分手机等等。这种可信硬件设备由于是基于半导体硬件，设计尽可能简单，简单到基本上没有什么出错或者被攻击的地方。不过我很快发现另外一个问题：尽管他们本身是尽职尽责而且十分可靠可信的，但是他们保护的软件系统过于庞大（比如一台PC机）。这个被保护的系统包括很多层技术栈。每一层技术栈都至少百万代码，是有很多公司和开发者个人经过很多版本迭代开发出来的。而且每时每刻还在不停的更新中。无论开发者，DevOp和安全检查人员如何努力避免漏洞，在实际运行的系统中还是不停的出现各种可以被攻击者利用的漏洞。更为糟糕的是随着马太效应使得主流的软件模块更多的被使用。一旦这个主流模块发现漏洞，攻击者可以在很短的时间内找到海量的可攻击目标，造成巨大的攻击能力造成巨大的破坏。一个典型的例子就是Heartblead bug。尽管新一代的编程语言和技术栈已经远远好于以往（比如Rust相对于C/C++）但是理论上讲软件漏洞肯定还是随着代码量增加而增加。如果需要保护的代码（叫TCB，Trusted Code Base）达到一定程度了就基本上等于没有保护了。因为被保护代码内部就出现足够多致命的bug，安全性从内部就瓦解了。 基于CPU的可信计算技术（比如Intel SGX等）通过对内存中一块特别划分的“飞地”进行加密（完成这个的硬件模块叫MEE）让这个飞地里面的数据可以让除了CPU内部解密以外，其他任何人都无法读写。就算是操作系统完全被黑客控制也无计可施。因为解密和计算是在CPU内部完成的，因此只要CPU自身不会被硬件攻破，飞地的数据就是安全的。这种做法虽然也有旁路攻击等物理攻击，但是在大部分情况下已经可以达到可信计算的要求了。这种技术虽然相比加密学隐私保护可以达到很小的Overhead。代码执行起来和原生相比负担可以接受，不过要想用上这些技术需要应用软件做不小的改动。为了减少TCB，设计软件的工程师必须仔细斟酌那些代码会接触到隐私数据而必须放到可信区域内部执行，哪些数据必须保护，那些数据可以安全放到不可信区域。由于“飞地”的大小限制，很多时候这种Patition永远是一个鱼与熊掌不可兼得的游戏。如果把所有东西（比如整个OS）都一股脑扔进可信环境，那么就和刚才提到的TPM面临同样的TCB太大的问题。目前我见到比较好的尝试就是通过重写Syscall必须用到的Lib，组织成为一个精巧的LibOS。试图保证这个小的LibOS的漏洞很少体积很小，然后把这个libOS需要Syscall它的应用代码塞进可信空间执行。其余的留在外面。只要这个小的OS写得够安全够小，整个可信计算是可以安全地跑在飞地里面的。虽然需要重写很多现有的应用才能适用，我现在仍然认为这个方向是可行的方向之一。
-既然软件要重写不如重新考虑架构 既然软件要重写才能获得安全性是不可避免的，我于是开始在这个前提下寻找其他更好的解决方案。一个最近很有热度的技术WebAssembly（后面都简写为wasm）频频跳到我的眼前。虽然两年前就知道这个技术，但是当然的理解不够深入，以为就是一个加快Javascript执行的小玩意儿。时隔两年的确得刮目相看了。一看不得了，才发现了很多原先并没有太注意的设计细节，也难怪获得这么广泛的支持很可能成为未来的一个主流技术标准。关于为什么我看好wasm这个问题我会详细在后面专门这个主题展开。暂时先假设你接受我的这个观点，我们方便进行下面的逻辑。
-就近计算：数据就别舟车劳顿了，代码送到你身边 若真的未来大量的应用都会基于wasm来开发和部署，那么我们现在的云计算环境是不是还适合呢？我认为肯定是可以，但是恐怕不是最优解。目前的云计算是开发者把代码送到数据中心部署。然后客户端（web或者移动）把用户输入的数据也送到数据中心的服务器上被开发者的代码加载并运算。结果再返回客户端，于是用户就看到UI上的内容了。这种方法虽然可以通过CDN优化来就近计算，很多时候这些数据还是需要从客户端传输到为数不够多的云计算中心来处理。基于目前数量不是海量的情况倒是没啥问题。绝大多数时候大家并没有感到速度难以忍受，但是如果未来需要处理AI这类的海量数据怎么办呢？尤其是5G普及以后，大家都放开来使用很大的带宽来处理海量数据，这些数据都跑上骨干网传输到数据中心一定会造成拥塞。按照去中心化的思路进行就近数据处理应该是一个好的思路。这些数据不需要跑到一个中心节点去计算，而是找到网络距离很短的就近节点，也就是所谓的“边缘节点”来完成计算，结果返回即可。边缘节点之间需要用骨干网进行高速数据同步即可。这个思路类似于在解决大城市交通问题的时候不一定非得在卫星城之间增加骨干道路高架桥高速路，而是应该在卫星城内部解决本地就近就业机会从而降低远程出行需求。 如果就近计算，那么就等于需要把开发者开发的应用服务器端部署到成千上万个边缘节点上去运行。这其实是另外一个难题：目前的云计算架构在服务器端还是很庞大的。虽然现在Lambda等函数式服务器FaaS（Function as a Service)和Docker等容器技术被广泛应用，算是比较Portable了。但若真的大规模分布式部署，可能成本并不低。必须寻找更加轻量级的技术栈。这个恰好吻合wasm的Portable和体积小启动快效率高的优点。这种边缘计算的概念其实已经在不少CDN服务商开始动手了。CloudFlare有Worker，Fastly有Lucet，都是瞄着wasm去了。具体的技术细节我后面有章节展开，我们沿着这个逻辑继续前行。
-去中心化的就近计算呼唤无需信任的技术保障 虽然这些CDN服务商是分布式节点提供分布式服务的。但是他们从经营主体上来看，仍然是一个中心化的服务商。也就是说你必须信任这个服务商给你提供安全和可信环境运行你的代码。从区块链的思维方式来看，应该做到无需信任才可以最终保证最大程度的可信。在所谓无需信任这个大前提下，你大可以假设服务商的安全系统有漏洞导致OS被全线控制，网络上有偷听者，服务器上还有后门给某个强大的机构监视。而且开发者自己的代码或者开发者引用的其他开发者提供的库模块有主动或者无意的漏洞等等。如果这些都会发生，某个技术栈仍然可以保证计算结果正确而且中间没有隐私泄漏。这样的系统才是我们梦寐以求，为之奋斗的。
-把IPFS搞一个计算增强版 如果这个梦寐以求的技术存在，那么很理想的就是把现有的IPFS进行一个计算升级。把原本只能提供请求hash返回一个符合hash值的静态文件，变成请求一个hash的wasm代码和参数，返回一个经过可信计算的运行结果并附带一个可以证明其可信度的Proof of Trust (以后我就简称PoT）。客户端也可以使用智能合约检查某个计算节点的PoT来判断其可信程度满足要求，在通过共识协议确定满足可信要求的情况下把密钥发给其可信执行环境，在可信环境内部处理隐私数据，并确保计算完成后安全销毁。这样一来，任何本来没有信任度可言的散兵游勇都可以跳出来充当IPFS节点并增强计算功能提供完全去中心化的计算服务。然后挣到除了FileCoin以外的计算酬劳代币。Ta-da&hellip;. 一种新型的去中心化云服务模式就此诞生。 好，开篇不小心也写的太长了，后面的各个章节我会详细展开，从各个方面逐步解释我是如何考虑这样一个目标，并使用目前已有的计算机技术来排列组合出来满足需求的。请大家耐心等待我一篇一篇写。
-  </div>
-
-  <div class="rmore">
-    <a href='https://kevingzhang.github.io/posts/wasm_tpm_tee_0_chn/' class="rmore">Read more</a>
-  </div>
-
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://kevingzhang.github.io/posts/wasm_tpm_tee_series_chn/'> 使用可信计算和WebAssembly创建去中心化的云计算服务</a> </h2>
-    <div class="meta">
-      <div class="date">
-      3 Mar, 2020 - 1 minutes
-      </div>
-      
-<div class="tags">
-    
-</div>
-
-    </div>
-
-  </header>
-
-  <div class="summary">
-    TL;DR 本文的目的是设计一种使用最新的WebAssembly和可信计算技术结合的方案，试图让传统上在云中心进行的计算分布到距离数据更近的边缘节点（包括各种区块链节点例如IPFS矿机等）上就近计算。一方面降低骨干网传输拥塞，另一方面建立了一种付费委托计算的新区块链商业模式。
-这个话题会涉及到很多比较新的领域知识，兼顾篇幅和深度，我会在提及这些新概念的时候稍作评论，但是主要的细节还是需要自行搜索。否则篇幅会太长，可读性下降。即便如此，我还没有开始动笔就预测到可能不会太短。所以我计划分几个小主题分期阐述。大家时间有限的话可以直接跳到相关主题阅读。这些主题包括： 0. 历史缘由和想法背景
- 隐私保护的难题 尝试过的种种挫折 发现曙光   现在的云计算模式是否有可能去中心化？   现在的移动或者Web应用是如何跑起来的？ 理解静态内容和动态内容 理解了这种运行机制就容易理解为什么需要云计算中心这种机构。  搬运数据还是搬运代码？   Function as a service 或者所谓的Serverless日渐流行 未来5G流行以后需要处理的数据量可能无法在骨干网传输 如果把计算放到客户端或者最接近数据的边缘节点会如何？  WebAssembly既不仅用于Web也不是Assembly   为什么IT人员起名字都很迷惑？Javascript和Java是亲戚吗？Panapple和Apple呢？ WebAssembly最适合Serverless的函数式服务 WebAssembly的安全考量  IPFS的去中心化静态内容存储发布   回忆一下静态内容的定义，IPFS和CDN的设计思路是有区别的 IPFS天生适合静态内容，但是CDN服务商都逐步提供函数式计算服务了 IPFS上有可能增强成为计算节点吗？信任从何而来？  可信计算和隐私计算的不同之处   可信计算虽然也可能保护隐私，但是重点在可信。 隐私计算除了要求结果可信之外，还着重数据保护。 几种常见的隐私计算方案  用CPU来保护还是用硬件加密模块来保护？   以Intel SGX为例，看看同一个内存地址空间使用分区和内存加密保护隐私 做一个外置的独立计算单元又如何？ 比较一下TCB。潜在的危险  如果给IPFS矿机上安装一个面向Wasm的计算单元，是不是就得到世界上最大规模的边缘可信计算网络？   一个疯狂但是可能是可行的想法 大致的逻辑结构和工作流程  这种新型技术栈上软件开发的模式应该是什么样的？   静态内容和动态内容 云端部署还是去中心化部署 用户体验如何？  用上区块链让经济体运行起来   我们的口号： Trust as a Service 有偿计算，加密货币结算 区块链的共识机制  既然已经可信了，我们还能做点什么？   新型共识机制新型区块链？ 就近计算解放人工智能  几个虚构但不是科幻的应用案例   金融系统多方安全计算 分布式人脸识别抓逃犯  如何开始布局迎接新一代去中心化计算的时代？  
-  </div>
-
-  <div class="rmore">
-    <a href='https://kevingzhang.github.io/posts/wasm_tpm_tee_series_chn/' class="rmore">Read more</a>
-  </div>
-
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
     <h2 class="title"> <a href='https://kevingzhang.github.io/posts/run-wasm-in-raspberry-pi-4-today/'> Run WASM in Raspberry Pi 4 Today</a> </h2>
     <div class="meta">
       <div class="date">
@@ -381,6 +314,77 @@ How blockchain solve this kind of issue? BTC and other Blockchain projects gave 
 
   <div class="rmore">
     <a href='https://kevingzhang.github.io/posts/vrf-task-competing/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://kevingzhang.github.io/posts/existing-centralzied-trust/'> Existing Centralized Trust Solution</a> </h2>
+    <div class="meta">
+      <div class="date">
+      16 Dec, 2019 - 3 minutes
+      </div>
+      
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/trusted-computing">#trusted computing</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/tech">#tech</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/blockchain">#blockchain</a>
+      </div>
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    Although we generally do not trust a machine in the middle of nowhere, in most cases we still use them, every day, every minute, every second. Cloud computing is one example. Nowadays most of the computing is happening in the data center of cloud computing providers, such as Amazon, Google, Microsoft, and others. We trust them because they are big names, and we trust them because we know they spend tons of resources to keep our data secure.
+  </div>
+
+  <div class="rmore">
+    <a href='https://kevingzhang.github.io/posts/existing-centralzied-trust/' class="rmore">Read more</a>
+  </div>
+
+
+</article>
+
+
+    <article class="post-preview">
+
+  <header>
+    <h2 class="title"> <a href='https://kevingzhang.github.io/posts/secure-data/'> Secure your data at rest, in transmit, and more difficult, in use</a> </h2>
+    <div class="meta">
+      <div class="date">
+      15 Dec, 2019 - 3 minutes
+      </div>
+      
+<div class="tags">
+    
+</div>
+
+    </div>
+
+  </header>
+
+  <div class="summary">
+    When we talking about secure our data, we actually mean three different stages of a data&rsquo;s life.
+Data at rest: When data is sleeping in someone&rsquo;s hard drive. Data in transit: Data is transferred between two trusted domains. eg. from a database server to compute node, or from your browser to a server. Data in use: Data is calculated inside a machine (RAM and CPU) Data in transit problem has been resolved by cryptography, such as https have been widely used.
+  </div>
+
+  <div class="rmore">
+    <a href='https://kevingzhang.github.io/posts/secure-data/' class="rmore">Read more</a>
   </div>
 
 
